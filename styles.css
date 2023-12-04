@@ -1,0 +1,202 @@
+body {
+  background-color: beige;
+}
+
+main:not(#nav) {
+  width: 1000px;
+  margin: auto;
+  align-items: center;
+}
+
+/* 1 Page Structure excluding nav, banner and about sections */
+section:not(#nav):not(#banner):not(#about):not(#swatches):not(#popular):not(#footer):not(#cart) {
+  min-height: 100vh;
+  margin: 20px;
+}
+
+/* 2 Typography */
+h1 {
+  font-family: Nova Square, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+}
+
+p {
+  font-family: Jura, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: rgb(76, 195, 65);
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out
+}
+
+a:hover {
+  color: rgb(242, 191, 6);
+  transform: scale(1.2);
+}
+
+/* 3 Style the Navbar */
+#nav {
+  position: sticky;
+  top: 0;
+  min-height: 50px;
+}
+
+#nav>header {
+  background-color: rgb(0, 0, 0);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* 4 Style the Cards */
+#popular {
+  display: flex;
+  justify-content: space-around;
+}
+
+#popular .card {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  box-sizing: border-box;
+  border: solid black 5px;
+  border-radius: 5%;
+  background-color: rgb(220, 226, 200);
+}
+
+#popular img {
+  width: 100%;
+  height: auto;
+  border-radius: 6% 6% 0% 0%;
+}
+
+#popular p {
+  padding: 1em;
+}
+
+/* 5 Style the Colors into Grid */
+.swatch {
+  width: 75px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out
+}
+
+.swatch:hover {
+  transform: scale(1.2);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+/* 6 Generate 100 colors
+ - NOTE: See script.js file, line 14-16 and line 23
+    - Calculated varying levels of Hue for the colors and assigned them directly in the loop.
+*/
+
+/* 7 Style Shopping Cart */
+#total {
+  font-family: Jura, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+
+#total:before {
+  content: "Cart Total: ";
+}
+
+#items li {
+  width: 40vw;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-item .item-description {
+  margin-right: 10em;
+  font-family: Jura, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cart-modifier input {
+  width: 40px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.cart-modifier button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.add-one:hover {
+  background-color: orange
+}
+
+.remove-one:hover,
+.remove:hover {
+  background-color: red
+}
+
+/* 8 Style Contact Form  */
+#contact div {
+  display: flex;
+  justify-content: center;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Jura, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin: 10px;
+}
+
+#contact button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: orange;
+}
+
+/* 9 Center Elements */
+#contact {
+  background-color: #71c874;
+  border-radius: 5%;
+}
+
+#contact>header {
+  display: flex;
+  justify-content: center;
+}
